@@ -22,3 +22,7 @@ Changed description of shortcut @1 to \"@2\".=Die Beschreibung des @1. Kurzbefeh
 Lists all shortcuts.=Zeigt alle Kurzbefehle.
 You have no shortcuts!=Du hast keine Kurzbefehle!
 You have following shortcuts:=Du hast folgende Kurzbefehle:
+Copies a shortcut to another player.=Kopiert einen Kurzbefehl zu einem anderen Spieler.
+other player=anderer Spieler
+You can't copy a shortcut to yourself!=Du kannst keinen Kurzbelfehl zu dir kopieren!
+Copied shortcut successfully to @1!=Erfolgreich Kurzbefehl zu @1 kopiert!

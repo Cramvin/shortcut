@@ -10,14 +10,25 @@ ___
 
 If you have parameters that you don't know when you create a shortcut, you can use * to replace it.
 
-| Command                        | Description                         | Example                                |
-| ------------------------------ | ----------------------------------- | -------------------------------------- |
-| /lsc                           | lists shortcuts                     | /lsc                                   |
-| /csc \<command name\> [\<params\>] | creates shortcuts                   | /csc grant * fly                       |
-| /rsc \<number\>                  | removes a shortcut                  | /rsc 1                                 |
-| /sc \<number\>                   | runs a shortcut                     | /sc 1 User1234                         |
-| /sscd \<number\> \<description\>   | sets a description for a shortcut   | /sscd 1 Gives a player fly privileges. |
-| /scd \<number\>                  | shows the description of a shortcut | /scd 1                                 |
+| Command                             | Description                         | Example                                |
+| ----------------------------------- | ----------------------------------- | -------------------------------------- |
+| /lsc                                | lists shortcuts                     | /lsc                                   |
+| /csc \<command name\> [\<params\>]  | creates shortcuts                   | /csc grant * fly                       |
+| /copysc \<number\> \<other player\> | copies a shortcut to another player | /copysc 1 User1234                     |
+| /rsc \<number\>                     | removes a shortcut                  | /rsc 1                                 |
+| /sc \<number\>                      | runs a shortcut                     | /sc 1 User1234                         |
+| /sscd \<number\> \<description\>    | sets a description for a shortcut   | /sscd 1 Gives a player fly privileges. |
+| /scd \<number\>                     | shows the description of a shortcut | /scd 1                                 |
+
+___
+
+# Planned
+These are planned features that are upcoming in the next versions
+
+| Feature                                 | Description                                      |
+| --------------------------------------- | ------------------------------------------------ |
+| "/esc \<number\>" command               | a command for editing shortcuts                  |
+| add a parameter to /lsc and /copysc     | to list or copy shortcuts from other players     |
 
 ___
 

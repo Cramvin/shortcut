@@ -174,12 +174,46 @@ function list_shortcuts(player_name)
   end
 end
 
+function copy_shortcut(player_name,prms)
+  number, params = into_two(prms)
+  if player_name == params[1] then
+    minetest.chat_send_player(player_name, S("You can't copy a shortcut to yourself!"))
+    return
+  end
+  other_scs = {}
+  if shortcuts[params[1]] ~= nil then
+    other_scs = shortcuts[params[1]]
+  end
+  if shortcuts[player_name] ~= nil then
+    sc = shortcuts[player_name][tonumber(number)]
+    if sc ~= nil then
+      other_scs[#other_scs+1] = {cmd=sc.cmd,params=sc.params,desc=sc.desc}
+      shortcuts[params[1]] = other_scs
+      save_shortcuts()
+      minetest.chat_send_player(player_name, S("Copied shortcut successfully to @1!", params[1]))
+    else
+      minetest.chat_send_player(player_name, S("You have no shortcut number @1!", number))
+    end
+  else
+    minetest.chat_send_player(player_name, S("You have no shortcuts!"))
+  end
+end
+
 minetest.register_chatcommand("csc",{
     params = "<"..S("command name").."> [<"..S("params")..">]",
     description = S("Creates a shortcut to a command."),
     privs = {server=true},
     func = function(player_name,params)
              create_shortcut(player_name,params)
+           end,
+})
+
+minetest.register_chatcommand("copysc",{
+    params = "<"..S("number").."> <"..S("other player")..">",
+    description = S("Copies a shortcut to another player."),
+    privs = {server=true},
+    func = function(player_name,params)
+             copy_shortcut(player_name,params)
            end,
 })
 
