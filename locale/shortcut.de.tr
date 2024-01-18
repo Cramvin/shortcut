@@ -1,0 +1,24 @@
+# textdomain: shortcut
+description=Beschreibung
+number=Nummer
+params=Parameter
+command name=Befehlsname
+Removed command at @1.=Befehl entfernt an Stelle @1.
+You need to set parameters!=Du musst Befehlsargumente angeben!
+Command was executed successfully!=Befehl wurde erfolgreich ausgeführt!
+Something went wrong!=Etwas lief schief!
+Shortcut not found!=Kurzbefehl nicht gefunden!
+Created new shortcut for @1 at @2 with \"@3 \".=Kurzbefehl erstellt für @1 an Position @2 mit \"@3\".
+The command \"@1\" doesn't exist!=Der Befehl \"@1\" existiert nicht!
+Creates a shortcut to a command.=Erstellt einen Kurzbefehl.
+Removes a shortcut to a command.=Entfernt einen Kurzbefehl.
+Changes the description of a shortcut.=Ändert die Beschreibung eines Kurzbefehls.
+Outputs the description of a shortcut.=Ruft die Beschreibung eines Kurzbefehls auf.
+Runs a shortcut.=Führt einen Kurzbefehl aus.
+A shortcut.=Ein Kurzbefehl.
+You have no shortcut number @1!=Du hast den @1. Kurzbefehl nicht gesetzt!
+You have no shortcuts!=Du hast keine Kurzbefehle!
+Changed description of shortcut @1 to \"@2\".=Die Beschreibung des @1. Kurzbefehls wurde zu \"@2\" geändert.
+Lists all shortcuts.=Zeigt alle Kurzbefehle.
+You have no shortcuts!=Du hast keine Kurzbefehle!
+You have following shortcuts:=Du hast folgende Kurzbefehle:
