@@ -13,11 +13,11 @@ If you have parameters that you don't know when you create a shortcut, you can u
 | Command                        | Description                         | Example                                |
 | ------------------------------ | ----------------------------------- | -------------------------------------- |
 | /lsc                           | lists shortcuts                     | /lsc                                   |
-| /csc <command name> [<params>] | creates shortcuts                   | /csc grant * fly                       |
-| /rsc <number>                  | removes a shortcut                  | /rsc 1                                 |
-| /sc <number>                   | runs a shortcut                     | /sc 1 User1234                         |
-| /sscd <number> <description>   | sets a description for a shortcut   | /sscd 1 Gives a player fly privileges. |
-| /scd <number>                  | shows the description of a shortcut | /scd 1                                 |
+| /csc \<command name\> [\<params\>] | creates shortcuts                   | /csc grant * fly                       |
+| /rsc \<number\>                  | removes a shortcut                  | /rsc 1                                 |
+| /sc \<number\>                   | runs a shortcut                     | /sc 1 User1234                         |
+| /sscd \<number\> \<description\>   | sets a description for a shortcut   | /sscd 1 Gives a player fly privileges. |
+| /scd \<number\>                  | shows the description of a shortcut | /scd 1                                 |
 
 ___
 
