@@ -1,5 +1,5 @@
 # Shortcut
-
+[![ContentDB](https://content.minetest.net/packages/Derevio/shortcut/shields/downloads/)](https://content.minetest.net/packages/Derevio/shortcut/)
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q67BE9Y)
 
 A mod for the open source game Minetest(>=0.5.4) which makes it possible to create shortcuts to commands.
@@ -8,13 +8,15 @@ ___
 
 # Commands
 
-If you have parameters that you don't know when you create a shortcut, you can use * to replace it.
+!!! If you had shortcuts before updating to ver.-2.0 you have to edit them maybe !!!
+If you have parameters that you don't know when you create a shortcut, you can use @p for players and * for everything else to replace it. Those parameters still need to be seperated from others by spaces.
 
 | Command                             | Description                         | Example                                |
 | ----------------------------------- | ----------------------------------- | -------------------------------------- |
-| /lsc                                | lists shortcuts                     | /lsc                                   |
-| /csc \<command name\> [\<params\>]  | creates shortcuts                   | /csc grant * fly                       |
+| /lsc [\<other player\>]             | lists shortcuts                     | /lsc User1234                          |
+| /csc \<command name\> [\<params\>]  | creates shortcuts                   | /csc grant @p fly, *                   |
 | /copysc \<number\> \<other player\> | copies a shortcut to another player | /copysc 1 User1234                     |
+| /esc \<number\>                     | edits a shortcut                    | /esc 1                                 |
 | /rsc \<number\>                     | removes a shortcut                  | /rsc 1                                 |
 | /sc \<number\>                      | runs a shortcut                     | /sc 1 User1234                         |
 | /sscd \<number\> \<description\>    | sets a description for a shortcut   | /sscd 1 Gives a player fly privileges. |
@@ -22,19 +24,9 @@ If you have parameters that you don't know when you create a shortcut, you can u
 
 ___
 
-# Planned
-These are planned features that are upcoming in the next versions
-
-| Feature                                 | Description                                      |
-| --------------------------------------- | ------------------------------------------------ |
-| "/esc \<number\>" command               | a command for editing shortcuts                  |
-| add a parameter to /lsc and /copysc     | to list or copy shortcuts from other players     |
-
-___
-
 # Installation
 
-Either download it through in game with the Content API or
+Either download it through in game with ContentDB or
 
 1. Download the mod from [here](https://github.com/Cramvin/shortcut/releases/tag/Release)
 
@@ -50,4 +42,4 @@ ___
 
 # Feedback
 
-If you have any wishes for a new feature or you have found a bug then please let me know in the Issues tab or on the Content API site of Minetest.
+If you have any wishes for a new feature or you have found a bug then please let me know in the Issues tab or on the ContentDB site of Minetest.

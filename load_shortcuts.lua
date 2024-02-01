@@ -5,3 +5,6 @@ end
 if not pcall(get_shortcuts) then
   shortcuts = {}
 end
+if shortcuts == nil then
+  shortcuts = {}
+end
