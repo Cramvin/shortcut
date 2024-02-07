@@ -8,7 +8,7 @@ ___
 
 # Commands
 
-!!! If you had shortcuts before updating to ver.-2.0 you have to edit them maybe !!!
+**!!! If you had shortcuts before updating to ver.-1.2 you have to edit them maybe !!!**
 If you have parameters that you don't know when you create a shortcut, you can use @p for players and * for everything else to replace it. Those parameters still need to be seperated from others by spaces.
 
 | Command                              | Description                             | Example                                |
