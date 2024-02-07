@@ -36,3 +36,4 @@ Player @1 has no shortcut number @2!=Spieler @1 hat keinen @2. Kurzbefehl!
 Player @1 has no shortcuts!=Spieler @1 hat keine Kurzbefehle!
 Player @1 has the following shortcuts:=Spieler @1 hat folgende Kurzbefehle:
 Create=Erstellen
+The command you attempt to use does not exist!=Der Befehl, den du benutzen willst, existiert nicht!

@@ -48,10 +48,14 @@ function shortcut_funcs.run_shortcut(player_name,prms)
     sc = sc[tonumber(number)]
   end
   if sc then
+    if minetest.registered_chatcommands[sc["cmd"]] == nil then
+      minetest.chat_send_player(player_name, S("The command you attempt to use does not exist!"))
+      return
+    end
     if #sc.params > 0 then
       sc_params = shortcut_funcs.copy(sc.params)
       if shortcut_funcs.to_change(sc_params) ~= #cmd_params then
-         minetest.chat_send_player(player_name, S("You need to set parameters!"))
+        minetest.chat_send_player(player_name, S("You need to set parameters!"))
         return
       end
       j = 1
