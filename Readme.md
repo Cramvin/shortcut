@@ -11,16 +11,16 @@ ___
 !!! If you had shortcuts before updating to ver.-2.0 you have to edit them maybe !!!
 If you have parameters that you don't know when you create a shortcut, you can use @p for players and * for everything else to replace it. Those parameters still need to be seperated from others by spaces.
 
-| Command                             | Description                         | Example                                |
-| ----------------------------------- | ----------------------------------- | -------------------------------------- |
-| /lsc [\<other player\>]             | lists shortcuts                     | /lsc User1234                          |
-| /csc \<command name\> [\<params\>]  | creates shortcuts                   | /csc grant @p fly, *                   |
-| /copysc \<number\> \<other player\> | copies a shortcut to another player | /copysc 1 User1234                     |
-| /esc \<number\>                     | edits a shortcut                    | /esc 1                                 |
-| /rsc \<number\>                     | removes a shortcut                  | /rsc 1                                 |
-| /sc \<number\>                      | runs a shortcut                     | /sc 1 User1234                         |
-| /sscd \<number\> \<description\>    | sets a description for a shortcut   | /sscd 1 Gives a player fly privileges. |
-| /scd \<number\>                     | shows the description of a shortcut | /scd 1                                 |
+| Command                              | Description                             | Example                                |
+| ------------------------------------ | --------------------------------------- | -------------------------------------- |
+| /csc [\<command name\> [\<params\>]] | creates shortcuts (even without params) | /csc grant @p fly, *                   |
+| /esc \<number\>                      | edits a shortcut                        | /esc 1                                 |
+| /copysc \<number\> \<other player\>  | copies a shortcut to another player     | /copysc 1 User1234                     |
+| /lsc [\<other player\>]              | lists shortcuts (even without params)   | /lsc User1234                          |
+| /rsc \<number\>                      | removes a shortcut                      | /rsc 1                                 |
+| /sc \<number\>                       | runs a shortcut                         | /sc 1 User1234                         |
+| /sscd \<number\> \<description\>     | sets a description for a shortcut       | /sscd 1 Gives a player fly privileges. |
+| /scd \<number\>                      | shows the description of a shortcut     | /scd 1                                 |
 
 ___
 

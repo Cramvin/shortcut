@@ -1,11 +1,7 @@
 local S = minetest.get_translator("shortcut")
 
 minetest.register_on_player_receive_fields(function(player, formname, fields)
-    if formname ~= "shortcut:edit" then
-        return
-    end
-
-    if fields.accept then
+    if formname == "shortcut:edit" then
         local player_name = player:get_player_name()
         local sc = 0
         for i=1,#shortcuts[player_name] do
@@ -19,6 +15,19 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
           minetest.close_formspec(player_name, formname)
           minetest.chat_send_player(player_name, S("Changed command at @1 successfully!", sc))
         end
+    elseif formname == "shortcut:create" then
+       local player_name = player:get_player_name()
+       scs = shortcuts[player_name]
+       if scs == nil then
+         scs = {}
+       end
+       scs[#scs+1] = {cmd = fields.command, params = shortcut_funcs.split_string(fields.params), desc = fields.description}
+       shortcuts[player_name] = scs
+       shortcut_funcs.save_shortcuts()
+       minetest.close_formspec(player_name, formname)
+       minetest.chat_send_player(player_name, S("Created new shortcut for @1 at @2 with \"@3 \".", fields.command, tostring(#shortcuts[player_name]), fields.params))
+    else
+       return
     end
 end)
 

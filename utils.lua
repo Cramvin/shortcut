@@ -36,7 +36,7 @@ function shortcut_funcs.into_two(params)
   return first, t
 end
 
-function shortcut_funcs.get_formspec(name, cmd)
+function shortcut_funcs.get_edit_formspec(cmd)
     local command_text = S("Command")
     local params_text = S("Parameters")
     local desc_text = S("Description")
@@ -49,6 +49,24 @@ function shortcut_funcs.get_formspec(name, cmd)
         "field[0.375,2;7.25,0.5;params;", minetest.formspec_escape(params_text), ";", minetest.formspec_escape(table.concat(cmd.params, " ")), "]",
         "field[0.375,3.125;7.25,0.5;description;", minetest.formspec_escape(desc_text), ";", minetest.formspec_escape(cmd.desc), "]",
         "button[2.5,3.875;3,1;accept;", minetest.formspec_escape(button_text), "]"
+    }
+
+    return table.concat(formspec, "")
+end
+
+function shortcut_funcs.get_create_formspec(cmd)
+    local command_text = S("Command")
+    local params_text = S("Parameters")
+    local desc_text = S("Description")
+    local button_text = S("Create")
+
+    local formspec = {
+        "formspec_version[4]",
+        "size[8,5.25]",
+        "field[0.375,0.875;7.25,0.5;command;", minetest.formspec_escape(command_text), ";", minetest.formspec_escape(cmd.cmd), "]",
+        "field[0.375,2;7.25,0.5;params;", minetest.formspec_escape(params_text), ";", minetest.formspec_escape(table.concat(cmd.params, " ")), "]",
+        "field[0.375,3.125;7.25,0.5;description;", minetest.formspec_escape(desc_text), ";", minetest.formspec_escape(cmd.desc), "]",
+        "button[2.5,3.875;3,1;create;", minetest.formspec_escape(button_text), "]"
     }
 
     return table.concat(formspec, "")

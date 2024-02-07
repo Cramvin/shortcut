@@ -102,20 +102,24 @@ end
 
 function shortcut_funcs.create_shortcut(player_name,prms)
   -- create shortcut and add it to the "shortcut" table
-  -- register it as "sc <number in table> [<params>]" -> [] is future content
-  command_name, params = shortcut_funcs.into_two(prms)
   scs = shortcuts[player_name]
   if not scs then
     scs = {}
   end
-  if minetest.registered_chatcommands[command_name] == nil then
-    minetest.chat_send_player(player_name, S("The command \"@1\" doesn't exist!", command_name))
-    return
+  if prms ~= '' then
+    command_name, params = shortcut_funcs.into_two(prms)
+    if minetest.registered_chatcommands[command_name] == nil then
+      minetest.chat_send_player(player_name, S("The command \"@1\" doesn't exist!", command_name))
+      return
+    end
+    scs[#scs+1] = {cmd=command_name,params=params,desc=S("A shortcut.")}
+    shortcuts[player_name] = scs
+    shortcut_funcs.save_shortcuts()
+    minetest.chat_send_player(player_name, S("Created new shortcut for @1 at @2 with \"@3 \".", command_name, tostring(#scs), shortcut_funcs.table_to_string(params)))
+  else
+    cmd = {cmd="", params={""}, desc=S("A shortcut.")}
+    minetest.show_formspec(player_name, "shortcut:create", shortcut_funcs.get_create_formspec(cmd))
   end
-  scs[#scs+1] = {cmd=command_name,params=params,desc=S("A shortcut.")}
-  shortcuts[player_name] = scs
-  shortcut_funcs.save_shortcuts()
-  minetest.chat_send_player(player_name, S("Created new shortcut for @1 at @2 with \"@3 \".", command_name, tostring(#scs), shortcut_funcs.table_to_string(params)))
 end
 
 function shortcut_funcs.list_shortcuts(player_name,other_player)
@@ -173,12 +177,10 @@ function shortcut_funcs.edit_shortcut(player_name,number)
   scs = {}
   if shortcuts[player_name] ~= nil then
     scs = shortcuts[player_name]
-  end
-  if shortcuts[player_name] ~= nil then
     sc = scs[tonumber(number)]
     if sc ~= nil then
       shortcuts[player_name][tonumber(number)].edit = true
-      minetest.show_formspec(player_name, "shortcut:edit", shortcut_funcs.get_formspec(player_name,sc))
+      minetest.show_formspec(player_name, "shortcut:edit", shortcut_funcs.get_edit_formspec(sc))
     else
       minetest.chat_send_player(player_name, S("You have no shortcut number @1!", number))
     end
