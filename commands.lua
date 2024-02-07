@@ -84,7 +84,7 @@ function shortcut_funcs.run_shortcut(player_name,prms)
 	minetest.chat_send_player(player_name, S("Something went wrong!"))
       end
     else
-      success, output = minetest.registered_chatcommands[sc["cmd"]].func(player_name)
+      success, output = minetest.registered_chatcommands[sc["cmd"]].func(player_name, "")
       if success then
 	if output == nil then
           minetest.chat_send_player(player_name, S("Command was executed successfully!"))
