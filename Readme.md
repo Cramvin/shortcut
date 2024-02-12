@@ -28,7 +28,7 @@ ___
 
 Either download it through in game with ContentDB or
 
-1. Download the mod from [here](https://github.com/Cramvin/shortcut/releases/tag/Release)
+1. Download the mod from [here](https://github.com/Cramvin/shortcut/releases/latest)
 
 2. Open the Minetest mods directory (end of path looks like .../Minetest-0.5.8/mods)
 
