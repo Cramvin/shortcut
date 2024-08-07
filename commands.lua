@@ -82,10 +82,10 @@ function shortcut_funcs.run_shortcut(player_name,prms)
             minetest.chat_send_player(player_name, output)
           end
         else
-	  minetest.chat_send_player(player_name, S("Something went wrong!"))
+	  minetest.chat_send_player(player_name, S("Something went wrong! If this happens to often, you should consider to change the shortcut!"))
         end
       else
-	minetest.chat_send_player(player_name, S("Something went wrong!"))
+	minetest.chat_send_player(player_name, S("Something went wrong! If this happens to often, you should consider to change the shortcut!"))
       end
     else
       success, output = minetest.registered_chatcommands[sc["cmd"]].func(player_name, "")
@@ -96,7 +96,7 @@ function shortcut_funcs.run_shortcut(player_name,prms)
           minetest.chat_send_player(player_name, output)
         end
       else
-	minetest.chat_send_player(player_name, S("Something went wrong!"))
+	minetest.chat_send_player(player_name, S("Something went wrong! If this happens to often, you should consider to change the shortcut!"))
       end
     end
   else
