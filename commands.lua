@@ -15,6 +15,7 @@ function shortcut_funcs.change_desc(player_name,params)
   end
 end
 
+
 function shortcut_funcs.read_desc(player_name,number)
   if shortcuts[player_name] ~= nil then
     if shortcuts[player_name][tonumber(number)] ~= nil then
@@ -26,6 +27,7 @@ function shortcut_funcs.read_desc(player_name,number)
     minetest.chat_send_player(player_name, S("You have no shortcuts!"))
   end
 end
+
 
 function shortcut_funcs.remove_shortcut(player_name,number)
   if shortcuts[player_name] ~= nil then
@@ -40,6 +42,7 @@ function shortcut_funcs.remove_shortcut(player_name,number)
     minetest.chat_send_player(player_name, S("You have no shortcuts!"))
   end
 end
+
 
 function shortcut_funcs.run_shortcut(player_name,prms)
   number, cmd_params = shortcut_funcs.into_two(prms)
@@ -104,6 +107,7 @@ function shortcut_funcs.run_shortcut(player_name,prms)
   end
 end
 
+
 function shortcut_funcs.create_shortcut(player_name,prms)
   -- create shortcut and add it to the "shortcut" table
   scs = shortcuts[player_name]
@@ -125,6 +129,7 @@ function shortcut_funcs.create_shortcut(player_name,prms)
     minetest.show_formspec(player_name, "shortcut:create", shortcut_funcs.get_create_formspec(cmd))
   end
 end
+
 
 function shortcut_funcs.list_shortcuts(player_name,other_player)
   scs = shortcuts[player_name]
@@ -152,6 +157,7 @@ function shortcut_funcs.list_shortcuts(player_name,other_player)
   end
 end
 
+
 function shortcut_funcs.copy_shortcut(player_name,prms)
   number, params = shortcut_funcs.into_two(prms)
   if player_name == params[1] then
@@ -176,6 +182,7 @@ function shortcut_funcs.copy_shortcut(player_name,prms)
     minetest.chat_send_player(player_name, S("You have no shortcuts!"))
   end
 end
+
 
 function shortcut_funcs.edit_shortcut(player_name,number)
   scs = {}

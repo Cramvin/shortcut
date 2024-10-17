@@ -40,6 +40,14 @@ To deinstall it delete the shortcut directory in the mods directory.
 
 ___
 
+# Planed features
+
+- reformat code for open source purposes
+- adding a new type of shortcuts to combine multiple chat commands in one
+- adding a new way of creating a multiple in one command
+
+___
+
 # Feedback
 
 If you have any wishes for a new feature or you have found a bug then please let me know in the Issues tab or on the ContentDB site of Minetest.
