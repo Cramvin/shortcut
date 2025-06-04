@@ -10,9 +10,9 @@ if shortcuts == nil then
 end
 
 local found = false
-for i=1,#shortcut do
-  if not shortcut[i]["type"] then
-    shortcut[i]["type"] = 0
+for i=1,#shortcuts do
+  if not shortcuts[i]["type"] then
+    shortcuts[i]["type"] = 0
     found = true
   else
     break
