@@ -21,6 +21,11 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
        if scs == nil then
          scs = {}
        end
+       if fields.command == "" or fields.command == nil then
+         minetest.close_formspec(player_name, formname)
+         minetest.chat_send_player(player_name, S("Canceled shortcut creation!"))
+         return
+       end
        scs[#scs+1] = {cmd = fields.command, params = shortcut_funcs.split_string(fields.params), desc = fields.description}
        shortcuts[player_name] = scs
        shortcut_funcs.save_shortcuts()
